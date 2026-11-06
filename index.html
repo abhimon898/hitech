@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071a36">
+  <meta name="description" content="HI-TECH Lab & Digital ECG Centre, OACIRA–AYIRAMTHENGU ROAD, ALUMPEEDIKA. Contact us for laboratory diagnostic services and digital ECG.">
+  <title>HI-TECH | Lab & Digital ECG Centre</title>
+  <style>
+    :root{--navy:#071a36;--blue:#087fce;--cyan:#35d2e8;--ink:#14243a;--muted:#607187;--pale:#eff8fc;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#f7fbfd;line-height:1.6}
+    a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
+    .topbar{background:#041329;color:#d9eafa;font-size:13px;padding:9px 5.5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);box-shadow:0 4px 24px #061b3510}
+    .nav{max-width:1200px;margin:auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.8px;color:var(--navy)}
+    .brand img{width:54px;height:54px;object-fit:cover;border-radius:50%;border:2px solid #d6edf7}
+    .brand small{display:block;font-size:10px;letter-spacing:1.5px;color:#658098;font-weight:700}
+    nav{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:700;color:#32475e}
+    nav a:hover{color:var(--blue)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 19px;border-radius:999px;background:var(--blue);color:white;font-weight:800;border:0;transition:.25s;box-shadow:0 8px 20px #087fce2b}
+    .nav-cta:hover,.btn:hover{transform:translateY(-2px);background:#0569ad}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 45%,#0c4778 0,#0a2b50 38%,#06162d 78%);color:#fff;min-height:650px;display:flex;align-items:center}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#06162df5 0%,#06162dcf 48%,#06162d35 100%);z-index:1}
+    .hero-photo{position:absolute;right:0;top:0;width:58%;height:100%;object-fit:cover;object-position:center 35%;opacity:.65}
+    .hero-inner{position:relative;z-index:3;max-width:1200px;width:100%;margin:auto;padding:90px 24px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#7fe7f3;font-size:12px;font-weight:900;letter-spacing:2.2px;text-transform:uppercase}
+    .eyebrow:before{content:"";width:28px;height:2px;background:var(--cyan)}
+    h1{font-size:clamp(42px,6.5vw,76px);line-height:1.03;letter-spacing:-2px;max-width:700px;margin:22px 0}
+    h1 span{color:#48d5e9}
+    .hero p{max-width:550px;color:#d5e5f2;font-size:18px;margin:0 0 30px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .btn.outline{background:transparent;border:1px solid #9dc9e6;color:#fff;box-shadow:none}
+    .btn.outline:hover{background:#ffffff18}
+    .hero-note{margin-top:28px;color:#b6d0e3;font-size:13px}
+    /* Animated DNA strand */
+    .dna-art{position:absolute;z-index:2;right:5%;top:7%;height:88%;width:min(34vw,390px);opacity:.78;pointer-events:none;filter:drop-shadow(0 0 12px #22bde9)}
+    .dna-art svg{height:100%;width:100%;overflow:visible}
+    .helix{fill:none;stroke:#31d5f2;stroke-width:3;stroke-linecap:round;stroke-dasharray:9 10;animation:flow 12s linear infinite}
+    .helix.second{stroke:#a3f5ff;stroke-width:2.3;animation-direction:reverse;opacity:.8}
+    .rung{stroke:#55dff5;stroke-width:1.5;opacity:.7;animation:pulse 2.4s ease-in-out infinite alternate}
+    @keyframes flow{to{stroke-dashoffset:-190}} @keyframes pulse{to{opacity:.18;stroke-width:3}}
+    .section{padding:88px 24px}.wrap{max-width:1160px;margin:auto}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 45px}
+    .kicker{color:var(--blue);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+    h2{font-size:clamp(30px,4vw,44px);line-height:1.15;color:var(--navy);margin:12px 0}
+    .section-head p{color:var(--muted);margin:0}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+    .photo-stack{position:relative;padding:0 32px 32px 0}
+    .photo-stack img{width:100%;height:440px;object-fit:cover;border-radius:22px;box-shadow:0 22px 55px #0a284022}
+    .photo-stack:after{content:"";position:absolute;right:0;bottom:0;width:55%;height:42%;border:5px solid #43c9e3;border-radius:20px;z-index:-1}
+    .about-copy h2{margin-top:10px}.about-copy p{color:var(--muted)}
+    .ticks{list-style:none;padding:0;margin:24px 0}.ticks li{margin:12px 0;font-weight:700;color:#30475e}
+    .ticks li:before{content:"✓";display:inline-grid;place-items:center;background:#d9f5f7;color:#087fa7;width:24px;height:24px;border-radius:50%;margin-right:10px}
+    .services{background:var(--pale)}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .service-card{background:white;border:1px solid #e2edf4;border-radius:22px;padding:30px;box-shadow:0 12px 35px #0a28400b;transition:.25s}
+    .service-card:hover{transform:translateY(-5px);box-shadow:0 18px 42px #0a284018}
+    .service-icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:#e1f6fb;color:#087fbd;font-size:27px;margin-bottom:18px}
+    .service-card h3{color:var(--navy);font-size:22px;margin:0 0 9px}.service-card p{color:var(--muted);margin:0}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .why{padding:26px;border-radius:18px;background:#fff;border:1px solid #e8f0f5}
+    .why b{display:block;color:var(--navy);font-size:17px;margin:9px 0}.why p{margin:0;color:var(--muted);font-size:14px}
+    .why .mini{font-size:25px;color:var(--blue)}
+    .contact{background:linear-gradient(135deg,#071a36,#0b4772);color:#fff}
+    .contact h2{color:#fff}.contact .section-head p{color:#c2d9e8}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .contact-card{padding:27px;background:#ffffff12;border:1px solid #ffffff25;border-radius:20px}
+    .contact-card h3{margin:0 0 8px;font-size:19px}.contact-card p{margin:0;color:#d4e5f1}
+    .contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .contact .btn{background:#35c6dc;color:#04223d}.contact .btn.whatsapp{background:#21c66b;color:#062c1a}
+    footer{background:#041329;color:#9db4c8;padding:25px 24px;text-align:center;font-size:13px}
+    .float-wa{position:fixed;right:20px;bottom:20px;z-index:30;background:#20c66b;color:#052d19;border-radius:50px;padding:14px 18px;font-weight:900;box-shadow:0 8px 25px #0003}
+    @media(max-width:800px){nav{display:none}.hero{min-height:680px}.hero-photo{width:100%;opacity:.28}.hero:after{background:linear-gradient(90deg,#06162de8,#06162d99)}.dna-art{right:-8%;width:52%;opacity:.35}.about-grid{grid-template-columns:1fr;gap:35px}.photo-stack img{height:350px}.cards,.contact-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.section{padding:68px 20px}.hero-inner{padding:75px 22px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><span>HI-TECH LAB &amp; DIGITAL ECG CENTRE</span><span>OACIRA–AYIRAMTHENGU ROAD, ALUMPEEDIKA</span></div>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#home"><img src="assets/hi-tech-logo.jpg" alt="HI-TECH logo"><span>HI-TECH<small>LAB &amp; DIGITAL ECG CENTRE</small></span></a>
+      <nav><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#why">Why HI-TECH</a><a href="#contact">Contact</a></nav>
+      <a class="nav-cta" href="tel:+919946410677">Call Now ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <img class="hero-photo" src="assets/lab-professional.jpg" alt="Laboratory professional working with diagnostic equipment">
+      <div class="dna-art" aria-hidden="true">
+        <svg viewBox="0 0 360 700" preserveAspectRatio="none">
+          <path class="helix" d="M65 0 C330 100 330 250 65 350 C-100 450 -100 600 295 700"/>
+          <path class="helix second" d="M295 0 C30 100 30 250 295 350 C460 450 460 600 65 700"/>
+          <g id="rungs"></g>
+        </svg>
+      </div>
+      <div class="hero-inner">
+        <div class="eyebrow">Care • Clarity • Confidence</div>
+        <h1>Better insights.<br><span>Better health.</span></h1>
+        <p>Reliable laboratory diagnostics and Digital ECG services, with a commitment to careful testing and patient-focused service.</p>
+        <div class="hero-actions">
+          <a class="btn" href="tel:+919946410677">☎ Call 9946410677</a>
+          <a class="btn outline" href="https://wa.me/919946410677?text=Hello%20HI-TECH%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener">WhatsApp Us ↗</a>
+        </div>
+        <div class="hero-note">HI-TECH Lab &amp; Digital ECG Centre · Alumpeedika</div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap about-grid">
+        <div class="photo-stack"><img src="assets/lab-technician.jpg" alt="Laboratory technician handling a sample in a clinical setting"></div>
+        <div class="about-copy">
+          <div class="kicker">About HI-TECH</div>
+          <h2>Diagnostic support you can feel confident about.</h2>
+          <p>HI-TECH is a laboratory diagnostic and Digital ECG centre located at OACIRA–AYIRAMTHENGU ROAD, ALUMPEEDIKA. We aim to make essential diagnostic services accessible through a professional, patient-friendly environment.</p>
+          <ul class="ticks">
+            <li>Laboratory diagnostic services</li>
+            <li>Digital ECG facility</li>
+            <li>Convenient local contact and support</li>
+          </ul>
+          <a class="btn" href="#contact">Get in touch ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">What we offer</div><h2>Our services</h2><p>Diagnostic services designed to support your healthcare journey.</p></div>
+        <div class="cards">
+          <article class="service-card"><div class="service-icon">⚕</div><h3>Laboratory Diagnostics</h3><p>Laboratory testing services to support routine health assessment and clinical decision-making. Contact our centre to confirm the tests currently available.</p></article>
+          <article class="service-card"><div class="service-icon">♥</div><h3>Digital ECG</h3><p>Digital electrocardiogram (ECG) service to record the electrical activity of the heart. Please call ahead for availability and details.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">The HI-TECH approach</div><h2>Focused on your confidence</h2><p>We believe clear communication and a professional approach matter at every step.</p></div>
+        <div class="why-grid">
+          <div class="why"><div class="mini">⌁</div><b>Diagnostic focus</b><p>Laboratory diagnostics and Digital ECG services in one centre.</p></div>
+          <div class="why"><div class="mini">◎</div><b>Patient-friendly support</b><p>Reach us directly to ask about services, timings and preparation.</p></div>
+          <div class="why"><div class="mini">⌖</div><b>Convenient location</b><p>Located on OACIRA–AYIRAMTHENGU ROAD, ALUMPEEDIKA.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker" style="color:#66e3f1">Contact HI-TECH</div><h2>We're here to help.</h2><p>Call or message us for service information, availability and directions.</p></div>
+        <div class="contact-grid">
+          <div class="contact-card"><h3>Call / WhatsApp</h3><p>9946410677</p><div class="contact-actions"><a class="btn" href="tel:+919946410677">☎ Call Now</a><a class="btn whatsapp" href="https://wa.me/919946410677?text=Hello%20HI-TECH%2C%20I%20would%20like%20to%20enquire." target="_blank" rel="noopener">WhatsApp ↗</a></div></div>
+          <div class="contact-card"><h3>Visit our centre</h3><p>OACIRA–AYIRAMTHENGU ROAD,<br>ALUMPEEDIKA, KERALA</p><div class="contact-actions"><a class="btn outline" href="https://www.google.com/maps/search/?api=1&query=Oacira%20Ayiramthengu%20Road%2C%20Alumpeedika" target="_blank" rel="noopener">Open in Google Maps ↗</a></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> HI-TECH Lab &amp; Digital ECG Centre. All rights reserved.<br>For test availability, timings and preparation instructions, please contact the centre.</footer>
+  <a class="float-wa" href="https://wa.me/919946410677?text=Hello%20HI-TECH" target="_blank" rel="noopener" aria-label="Chat with HI-TECH on WhatsApp">✆ WhatsApp</a>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Animated cross-links make the DNA helix move continuously.
+    const group = document.getElementById('rungs');
+    for(let i=0;i<=28;i++){
+      const t=i/28, x1=65+(295-65)*t+90*Math.sin(t*Math.PI*2), x2=295+(65-295)*t-90*Math.sin(t*Math.PI*2);
+      const y=700*t;
+      const line=document.createElementNS('http://www.w3.org/2000/svg','line');
+      line.setAttribute('x1',Math.max(0,Math.min(360,x1))); line.setAttribute('x2',Math.max(0,Math.min(360,x2)));
+      line.setAttribute('y1',y); line.setAttribute('y2',y); line.setAttribute('class','rung');
+      line.style.animationDelay=(i*.11)+'s'; group.appendChild(line);
+    }
+  </script>
+</body>
+</html>
